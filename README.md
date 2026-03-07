@@ -1,4 +1,4 @@
-# Patient Care Utils
+# open-canvas
 
 A hobby project exploring **gesture-based interaction** using computer vision. It uses a webcam feed and hand tracking to let you draw freehand lines on screen by pinching your fingers — no mouse or touchscreen needed.
 
@@ -20,8 +20,8 @@ A second module (`mouse.py`) is in progress and will eventually replace canvas d
 ## Project Structure
 
 ```
-Patient-care-utils/
-├── care.py           # Main app — hand tracking + freehand drawing
+open-canvas/
+├── main.py           # Main app — hand tracking + freehand drawing
 ├── mouse.py          # WIP — future mouse cursor control via gestures
 └── requirements.txt  # Python dependencies
 ```
@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 ### 2. Set your camera source
 
-In `care.py`, the video source is set to an IP camera by default:
+In `main.py`, the video source is set to an IP camera by default:
 
 ```python
 cap = cv2.VideoCapture("http://192.168.29.71:4747/video")
@@ -55,7 +55,7 @@ If using an IP camera, you can use an app like **DroidCam** and replace the URL 
 ### 3. Run the app
 
 ```bash
-python care.py
+python main.py
 ```
 
 A window titled **"Image"** will open showing the live camera feed with hand landmarks drawn. Pinch your index finger and thumb together to draw on screen. Press **`q`** to quit.
@@ -73,7 +73,7 @@ A window titled **"Image"** will open showing the live camera feed with hand lan
 
 ## Planned Features (`mouse.py`)
 
-The `mouse.py` file is a scratchpad for the next phase: controlling the **mouse cursor** with hand movements using `pyautogui`. Once integrated into `care.py`, you'll be able to:
+The `mouse.py` file is a scratchpad for the next phase: controlling the **mouse cursor** with hand movements using `pyautogui`. Once integrated into `main.py`, you'll be able to:
 
 - Move the cursor by pointing your index finger
 - Click by pinching
