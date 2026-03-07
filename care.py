@@ -1,11 +1,7 @@
-# care.py
-
 import math
 import numpy as np
 import cv2
 import mediapipe as mp
-import pyautogui
-
 
 class HandDetector:
     """
@@ -184,7 +180,7 @@ def main():
     prev_point = None  # Store the previous point for drawing the freehand line
     
     # Initialize the webcam to capture video
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture("http://192.168.29.71:4747/video")
 
     
     # Enlarge the window to display the image
@@ -214,7 +210,6 @@ def main():
                 if prev_point is not None:
                     # Draw on the canvas instead of the frame
                     canvas = draw_freehand_line(canvas, prev_point, (tip_index_x, tip_index_y))
-                    # pyautogui.moveTo(x=tip_index_x, y=tip_index_y)
                     prev_point = (tip_index_x, tip_index_y)
                 else:
                     prev_point = (tip_index_x, tip_index_y)

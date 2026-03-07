@@ -1,3 +1,6 @@
+# to be integrated later into care.py to move mouse cursor based on hand movements instead of drawing on the canvas.
+# This will allow for more intuitive control of the cursor using hand gestures.
+
 import pyautogui
 
 # Move the mouse cursor to a specific position
