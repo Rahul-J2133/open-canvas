@@ -162,9 +162,9 @@ class HandDetector:
                     cv2.circle(img, (cx, cy), 15, (255, 0, 255), cv2.FILLED)
         return self.lmList
 
-def draw_freehand_line(canvas, prev_point, curr_point, color=(255, 255, 255), thickness=10):
+def draw_freehand_line(canvas, prev_point, curr_point, color=(255, 255, 0), thickness=10):
     if prev_point is not None:
-        cv2.line(canvas, prev_point, curr_point, color, thickness)
+        cv2.line(canvas, prev_point, curr_point, color, thickness, lineType=1)
     return canvas
 
 # def draw_reset_button(img):
@@ -181,12 +181,13 @@ def main():
     
     # Initialize the webcam to capture video
     cap = cv2.VideoCapture("http://192.168.29.71:4747/video")
+    # cap = cv2.VideoCapture(0)
 
     
     # Enlarge the window to display the image
     cv2.namedWindow("Image", cv2.WINDOW_NORMAL)
     cv2.resizeWindow("Image", 1200, 800)  # Adjust the size as per your preference
-    detector = HandDetector(staticMode=False, maxHands=2, modelComplexity=1, detectionCon=0.5, minTrackCon=0.5)
+    detector = HandDetector(staticMode=False, maxHands=1, modelComplexity=1, detectionCon=0.5, minTrackCon=0.5)
 
     while True:
         success, img = cap.read()
