@@ -72,7 +72,6 @@ A window titled **"Image"** will open showing the live camera feed with hand lan
 ---
 <img src="./canvas.png" style="max-width:100%; height:auto;" />
 <br/>
-<br/>
 <img src="Video Project 2.gif" style="width:100%; max-width:900px; height:auto;">
 
 ## Planned Features (`mouse.py`)
